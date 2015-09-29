@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.testCss3:after {
+				display: inline-block;
+				content: " (" attr(href) ")";
+				page-break-inside: always;
+			}
+			table {
+				page-break-inside: always;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="">
+			<a href="www.baidu.com" class="testCss3">测试css3的content和attr表达式</a>
+		</div>
+		<table border="" cellspacing="" cellpadding="">
+			<tr><th>Header</th><th>Header</th><th>Header</th></tr>
+			<tr><td>Data</td><td>Data</td><td>Data</td></tr>
+		</table>
+	</body>
+</html>

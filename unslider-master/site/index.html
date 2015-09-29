@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Unslider &mdash; the super-tiny jQuery slider</title>
+
+		<link rel="stylesheet" href="style.css">
+
+		<meta name="viewport" content="width=device-width">
+
+		<script src="//use.typekit.net/vgf3zbf.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+        <style>
+        </style>
+	</head>
+	<body>
+
+		<div class="banner">
+			<ul>
+				<li style="background-image: url('img/sunset.jpg');">
+					<div class="inner">
+						<h1>The jQuery slider that just slides.</h1>
+						<p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
+
+						<a class="btn" href="#download">Download</a>
+					</div>
+				</li>
+
+				<li style="background-image: url('img/wood.jpg');">
+					<div class="inner">
+						<h1>Fluid, flexible, fantastically minimal.</h1>
+						<p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+						<a class="btn" href="#download">Download</a>
+					</div>
+				</li>
+
+				<li style="background-image: url('img/subway.jpg');">
+					<div class="inner">
+						<h1>Open-source.</h1>
+						<p>Everything to do with Unslider is hosted on GitHub.</p>
+
+						<a class="btn" href="//github.com/idiot/unslider">Contribute</a>
+					</div>
+				</li>
+
+				<li style="background-image: url('img/shop.jpg');">
+					<div class="inner">
+						<h1>Uh, that’s about it.</h1>
+						<p>I just wanted to show you another slide.</p>
+
+						<a class="btn" href="#download">Download</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+
+
+		<script src="//code.jquery.com/jquery-latest.min.js"></script>
+
+		<script src="//stephband.info/jquery.event.move/js/jquery.event.move.js"></script>
+		<script src="//stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"></script>
+
+		<script src="../src/unslider.js"></script>
+		<script>
+			if(window.chrome) {
+				$('.banner li').css('background-size', '100% 100%');
+			}
+
+			$('.banner').unslider({
+				arrows: true,
+				fluid: true,
+				dots: true
+			});
+
+			//  Find any element starting with a # in the URL
+			//  And listen to any click events it fires
+			$('a[href^="#"]').click(function() {
+				//  Find the target element
+				var target = $($(this).attr('href'));
+
+				//  And get its position
+				var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
+
+				//  jQuery will return false if there's no element
+				//  and your code will throw errors if it tries to do .offset().left;
+				if(pos) {
+					//  Scroll the page
+					$('html, body').animate({
+						scrollTop: pos.top,
+						scrollLeft: pos.left
+					}, 1000);
+				}
+
+				//  Don't let them visit the url, we'll scroll you there
+				return false;
+			});
+
+			var GoSquared = {acct: 'GSN-396664-U'};
+		</script>
+		<script src="//d1l6p2sc9645hc.cloudfront.net/tracker.js"></script>
+	</body>
+</html>

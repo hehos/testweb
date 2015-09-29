@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>支持移动触摸屏的响应式jQuery幻灯片插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="banner">
+		<ul>
+			<li>
+                <img src="img/sunset.jpg" alt=""/>
+			</li>
+            <li>
+                <img src="img/wood.jpg" alt=""/>
+            </li>
+            <li>
+                <img src="img/subway.jpg" alt=""/>
+            </li>
+            <li>
+                <img src="img/shop.jpg" alt=""/>
+            </li>
+
+			<!--<li style="background-image: url('img/wood.jpg');">-->
+				<!--<div class="inner">-->
+					<!--<h1>Fluid, flexible, fantastically minimal.</h1>-->
+					<!--<p>Use any HTML in your slides, extend with CSS. You have full control.</p>-->
+				<!--</div>-->
+			<!--</li>-->
+
+			<!--<li style="background-image: url('img/subway.jpg');">-->
+				<!--<div class="inner">-->
+					<!--<h1>Open-source.</h1>-->
+					<!--<p>Everything to do with Unslider is hosted on GitHub.</p>-->
+				<!--</div>-->
+			<!--</li>-->
+
+			<!--<li style="background-image: url('img/shop.jpg');">-->
+				<!--<div class="inner">-->
+					<!--<h1>Uh, that’s about it.</h1>-->
+					<!--<p>I just wanted to show you another slide.</p>-->
+				<!--</div>-->
+			<!--</li>-->
+		</ul>
+        <a href="#" class="unslider-arrow prev">Previous slide</a>
+        <a href="#" class="unslider-arrow next">Next slide</a>
+    </div>
+
+    <style>
+        .unslider-arrow {
+            position: absolute;
+            top: 50%;
+        }
+        .unslider-arrow.prev {
+            left: 10px;
+        }
+        .unslider-arrow.next {
+            right: 10px;
+        }
+
+
+    </style>
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+
+	<script src="js/jquery.event.move.js"></script>
+	<script src="js/jquery.event.swipe.js"></script>
+
+	<script src="js/unslider.min.js"></script>
+	<script>
+		if(window.chrome) {
+			$('.banner li').css('background-size', '100% 100%');
+		}
+
+		$('.banner').unslider({
+			arrows: true,
+			fluid: true,
+			dots: true,
+			keys: true
+		});
+
+        var unslider = $('.banner').unslider();
+
+        $('.unslider-arrow').click(function() {
+            var fn = this.className.split(' ')[1];
+
+            //  Either do unslider.data('unslider').next() or .prev() depending on the className
+            unslider.data('unslider')[fn]();
+        });
+
+		//  Find any element starting with a # in the URL
+		//  And listen to any click events it fires
+		$('a[href^="#"]').click(function() {
+			//  Find the target element
+			var target = $($(this).attr('href'));
+
+			//  And get its position
+			var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
+
+			//  jQuery will return false if there's no element
+			//  and your code will throw errors if it tries to do .offset().left;
+			if(pos) {
+				//  Scroll the page
+				$('html, body').animate({
+					scrollTop: pos.top,
+					scrollLeft: pos.left
+				}, 1000);
+			}
+
+			//  Don't let them visit the url, we'll scroll you there
+			return false;
+		});
+	</script>
+</body>
+</html>

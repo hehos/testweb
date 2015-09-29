@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="waterfall.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			li {
+				float: left;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div style="height: 350px; overflow: auto; background-color: #ddd; border-bottom: 2px solid #000">
+			<ul class="jz-media-waterfall">
+				<li></li><li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+				<li></li><li></li><li></li><li></li>
+			</ul>
+		</div>
+
+        <div style="height: 350px; overflow: auto; background-color: #E4F7CF">
+
+            <ul class="jz-media-waterfall">
+                <li></li><li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+                <li></li><li></li><li></li><li></li>
+            </ul>
+
+        </div>
+
+
+	</body>
+	
+	
+	<script type="text/javascript">
+		// 模拟高度不一致的li
+		function rnd(min, max) {
+			return parseInt(min + Math.random() * (max-min));
+		}
+		var lis = $("li");
+		$.each(lis, function(i, item) {
+			$(item).css({
+				"height": rnd(100, 200),
+				"background": "rgb(" + rnd(0, 256) + "," + rnd(0, 256) + "," + rnd(0, 256) + ")"
+			});
+		});
+		
+		
+		
+		
+		$(document).ready(function() {
+			var waterfall = new Waterfall({
+				domObj: $(".jz-media-waterfall"),
+				cols: 4,
+
+				loadWay: "lazy",
+				animation: "fade",
+				initNum: 2,
+				batchNum: 4
+			});
+			waterfall.run();
+    	});
+		
+	</script>
+</html>

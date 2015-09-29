@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.fixed {
+				position: fixed; top: 0; left: 10px;
+				z-index: 22;
+				height: 100px; width: 100px;  background: #ddd;
+			}
+			.fixed2 {
+				position: absolute; top: 10px; left: 0;
+				z-index: 30;
+				height: 100px; width: 100px;  background: #003300;
+			}
+			
+			.fixed3 {
+				position: fixed; top: 50px; left: 0;
+				z-index: 20;
+				height: 100px; width: 100px; background: #DC322F;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="fixed">
+			<div class="fixed2">
+				aaaaaaaaa
+			</div>
+		</div>
+		<div class="fixed3">
+			bbbbbbbbbbb
+		</div>
+	</body>
+</html>

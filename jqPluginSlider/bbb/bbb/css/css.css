@@ -1,0 +1,13 @@
+/* CSS Document */
+body{font-size:14px; color:#505050; font-family:"Microsoft Yahei",Tahoma,Arial,Helvetica,STHeiti; background:#f8f8f8 }
+html, body, iframe,img, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, legend{ padding:0px; margin:0px; border:0px;}
+h5, h6{ font-weight:normal}
+table {border-collapse:collapse;border-spacing:0;width:100%;}
+li,ul{ list-style:none}
+
+
+.box{width:100%; max-width:700px; overflow:hidden; margin:auto;}
+.box img{ width:100%;}
+.mt10{ margin-top:10px;}
+.fl{ float:left; width:49%;}
+.fr{ float:right; width:49%;}

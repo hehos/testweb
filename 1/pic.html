@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>无标题页</title>
+  <script src="img/jquery-1.9.1.js"></script>
+</head>
+<body>
+  
+  
+  <div id="goods" class="case">
+  <img src="upload/KX-002.jpg">
+  <img src="http://www.mainaer.com/skin/maps/4.png" width="200" height="50" title="wos 手机卡仕达"/>
+  <img src="http://www.baywon.com/m/upload/KX-005.jpg" />
+  <img src="http://www.mainaer.com/skin/maps/6.png" />
+  <img src="http://www.mainaer.com/skin/maps/7.png" />
+  <img src="http://www.mainaer.com/skin/maps/8.png" />
+  <img src="upload/KX-001.jpg">
+  </div>
+  <div id="msgTool" style="float: left; width:100%; background-color:#666;">
+  
+  </div>
+
+  <script language="javascript" type="text/javascript">
+     
+     $(function (){
+      
+          $(".case img").each(function (i,e){
+              var imgsrc = $(e).attr("src");
+              $(e).load(function(){
+                   //$("<p> ok "+ $(e).width()+":"+$(e).height()+"图片地址有效</p>").appendTo("#msgTool");
+                }).error(function() {
+                   //$("<p> error "+ imgsrc  +"图片地址无效</p>").appendTo("#msgTool");
+                   //$(e).attr("src","http://www.mainaer.com/uploadfiles/mainaer/nopic.gif");
+				   alert(imgsrc+'无效链接要删除');
+				   $(this).remove();
+                }) ;
+         
+          });
+      });
+      
+     
+  </script>
+</body>
+</html>

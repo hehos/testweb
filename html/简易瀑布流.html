@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>无标题文档</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			div {
+				width: 666px;
+				margin: 0 auto;
+			}
+			ul {
+				width: 200px;
+				margin: 10px;
+				float: left;
+			}
+			ul li {
+				width: 100%;
+				margin: 10px 0;
+			}
+		</style>
+		<script>
+			function rnd(n, m) {
+				return parseInt(n + Math.random() * (m - n));
+			}
+
+			function createLi() {
+				var oLi = document.createElement('li');
+				oLi.style.height = rnd(100, 400) + 'px'; // [100,400)
+				oLi.style.background = "rgb(" + rnd(0, 256) + "," + rnd(0, 256) + "," + rnd(0, 256) + ")";
+				return oLi;
+			}
+			window.onload = function() {
+				var aUl = document.getElementsByTagName('ul');
+				create();
+
+				function create() {
+					for (var i = 0; i < 20; i++) {
+						var aLi = createLi();
+						var arr = [];
+						for (var j = 0; j < aUl.length; j++) {
+							arr.push(aUl[j]);
+						}
+						arr.sort(function(oUl1, oUl2) {
+							return oUl1.offsetHeight - oUl2.offsetHeight;
+						});
+						arr[0].appendChild(aLi);
+						//aUl[0].appendChild(aLi);
+					}
+				}
+				window.onscroll = function() {
+					alert(88);
+					var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // 滚动条向下拉动
+					var clientHeight = document.documentElement.clientHeight; // 可见高度
+					var oHeight = document.body.scrollHeight; // 范围
+					//			alert("scrollTop=" + scrollTop + ";  clientHeight=" + clientHeight + ";  oHeight=" + oHeight);
+					if (scrollTop >= oHeight - clientHeight) //页面滚动最下面时在ul下面添加元素
+					{
+						create();
+					}
+					
+					console.log()
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="div1">
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+		</div>
+	</body>
+
+</html>

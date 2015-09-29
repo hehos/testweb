@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* { border: none; padding: 0; margin: 0; }
+			body { position: relative; }
+			.parentEle, .childEle {
+				position: relative;
+			}
+			.childEle { overflow: hidden; }
+			.parentEle {
+				height: 300px;
+				width: 200px;
+				background: red;
+				
+				z-index: 10;
+			}
+			.parentEle2 {
+				background: green;
+				top: -30px;
+				z-index: 9;
+			}
+			.childEle {
+				height: 300px;
+				width: 200px;
+				background: #ddd;
+				
+				top: 0; left: 100px;
+				z-index: 11;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="parentEle">
+			父元素
+		</div>
+		<div class="parentEle parentEle2">
+			父元素2
+			
+			<div class="childEle">
+				子元素	
+			</div>
+		</div>
+	</body>
+</html>

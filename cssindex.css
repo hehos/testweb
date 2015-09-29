@@ -1,0 +1,30 @@
+.config-goods .ctrl-cates {
+  line-height: 40px;
+}
+.config-goods input,
+.config-goods button {
+  height: 30px;
+  line-height: 30px;
+}
+.config-goods input {
+  padding: 4px;
+}
+.config-goods .items-cont,
+.config-goods .items-cont li {
+  list-style: none;
+}
+.config-goods .items-cont:before,
+.config-goods .items-cont:after {
+  content: "";
+  display: table;
+}
+.config-goods .items-cont:after {
+  clear: both;
+}
+.config-goods .items-cont > li {
+  float: left;
+  width: 25%;
+}
+.config-goods .items-cont button {
+  padding: 4px 10px;
+}

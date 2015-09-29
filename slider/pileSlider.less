@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+ul, li {
+    list-style: none;
+}
+
+.pileSlider {
+    &, .items { position: relative; }
+    .item {
+        position: absolute;
+        
+        // 给item添加动画。
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        
+        img { 
+            width: 100%;  
+            height: auto;
+        }
+    } 
+    .sliderCtrl {
+        position: absolute;
+        right: 0; bottom: 10px;
+        z-index: 100;
+        text-align: right;
+        .clearfix;
+        i {
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin-left: 8px;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #999999;
+            &:hover, &.active {
+                background-color: #ff0000;
+            }
+        }
+    }
+}
+
+
+.clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+

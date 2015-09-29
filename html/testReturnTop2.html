@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1417689990_205308.css"/>
+	</head>
+	<body> 
+		<!--  返回顶部的样式   -->
+<div class="returnTop">
+    <style type="text/css">
+        ul, li { list-style: none; padding: 0; margin: 0; }
+ 
+        .returnTop {
+            display: inline-block;
+            position: fixed; z-index: 100;
+            right: 15px; bottom: 30px;
+        }
+        .m-returnTop li {
+            /*border: 1px solid #ddd;*/
+            border-radius: 8px;
+        }
+        .m-returnTop {
+            width: 30px;
+            border-width: 0 1px;
+            margin: 6px;
+        }
+        .m-returnTop li {
+            margin: 5px -6px;
+            text-align: center;
+            padding: 5px;
+            /*height: 50px; line-height: 50px;*/
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .m-returnTop li:first-child { margin-top: 0; }
+        .m-returnTop li:last-child { margin-bottom: 0; }
+        .m-returnTop li .txt {
+            display: none;
+            font-size: 14px;
+            line-height: 20px;
+            color: #fff;
+        }
+        .m-returnTop li:hover .txt {
+        	/* hover time show */
+            /*display: inline-block;*/
+        }
+        .m-returnTop li:hover [class^="icon-"] {
+        	/* hover time hidden */
+            /*display: none;*/
+        }
+ 
+        /* 图标样式 */
+        .m-returnTop [class^="jz-iconfont"] {
+            font-size: 30px;
+            color: #fff;
+        }
+    </style>
+    <ul class="m-returnTop">
+        <li class="iconItem">
+        	<!-- fontIcon -->
+        	<span class="jz-iconfont jz-icon-zhidingtop"></span>
+        	<!-- describe text -->
+            <a  class="txt" href="javascript:void(0);">回到顶部</a>
+        </li>
+    </ul>
+</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+.config-goods ul,
+.config-goods li {
+  list-style: none;
+  margin: 0;
+}
+.config-goods ul {
+  overflow: hidden;
+}
+.config-goods .ctrl-cates {
+  line-height: 40px;
+}
+.config-goods input,
+.config-goods button {
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 22px;
+  border: 1px solid #ddd;
+  margin: 0;
+}
+.config-goods input {
+  padding: 4px;
+}
+.config-goods .items-cont:before,
+.config-goods .items-cont:after {
+  content: "";
+  display: table;
+}
+.config-goods .items-cont:after {
+  clear: both;
+}
+.config-goods .items-cont .cell-cont {
+  float: left;
+  width: 25%;
+}
+.config-goods .items-cont button {
+  padding: 4px 10px;
+}
+.config-goods .items-cont .btn-add-input {
+  width: 4em;
+}
+.config-goods .items-cont .cell-edit {
+  width: 8em;
+}
+.config-goods .items-cont .cell-edit,
+.config-goods .items-cont .btn-add-cate {
+  display: none;
+}
+.config-goods .cell-cont input[type=checkbox] {
+  margin-right: 3px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="iconfont.css"/>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	</head>
+	<body>
+		<div class="">
+		</div>
+		<div class="test1">
+			<ul>
+				<li>
+					<div class="test-child"><i class="jc-iconfont jc-icon-choose"></i>kfjklajflkafj</div>
+				</li>
+				<li>
+					<div class="test-child"><i class="jc-iconfont jc-icon-choose"></i>kfjklajflkafj</div>
+				</li>
+				<li>
+					<div class="test-child"><i class="jc-iconfont jc-icon-choose"></i>kfjklajflkafj</div>
+				</li>
+				<li>
+					<div class="test-child"><i class="jc-iconfont jc-icon-choose"></i>kfjklajflkafj</div>
+				</li>
+				<li>
+					<div class="test-child"><i class="jc-iconfont jc-icon-choose"></i>kfjklajflkafj</div>
+				</li>
+			</ul>
+		</div>
+		<div class="test2">
+			<ul>
+				<li>
+					<label for="address_id_4">
+						<div class="test2-child">
+							<input type="radio" name="consignee_id" id="address_id_4" value="4">
+							<i class="jc-iconfont jc-icon-choose"></i>
+						</div>
+						<div class="addr-right">
+							<p>联系人：2131212323</p>
+							<p>地址：12312312323234234</p>
+							<p>电话：13666666666</p>
+						</div>
+					</label>
+				</li>
+				<li>
+					<label for="address_id_5">
+						<div class="test2-child">
+							<input type="radio" name="consignee_id" id="address_id_5" value="4">
+							<i class="jc-iconfont jc-icon-choose"></i>
+						</div>
+						<div class="addr-right">
+							<p>联系人：2131212323</p>
+							<p>地址：12312312323234234</p>
+							<p>电话：13666666666</p>
+						</div>
+					</label>
+				</li>
+		
+			</ul>
+		</div>
+		
+		<div class="test3">
+			<p>测试label对事件的影响。</p>
+			<label for="test-label">测试label对事件的影响</label>
+			<input type="radio" name="" id="test-label" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		(function() {
+			$(".test1 li").click(function() {
+				alert(88);
+				$(this).find(".test-child i").toggleClass("jc-icon-choose").toggleClass("jc-icon-checked");
+			});
+		})();
+		(function() {
+			$(".test2 li").click(function() {
+				alert(88);
+				$(this).find(".test2-child i").toggleClass("jc-icon-choose").toggleClass("jc-icon-checked");
+			});
+		})();
+		
+		(function() {
+			$(".test3").click(function() {
+				alert(88);
+			});
+		})();
+
+	</script>
+</html>
+

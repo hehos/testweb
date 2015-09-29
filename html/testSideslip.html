@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* { border: none; padding: 0; margin: 0; }
+			.container {
+				height: 400px;
+				background-color: #f1f1f1;
+			}
+			
+			.sideslip {
+				position: fixed;
+				right: -50%; top: 0;
+				width: 50%;
+				transition: right 0.5s;
+				-moz-transition: right 0.5s;	/* Firefox 4 */
+				-webkit-transition: right 0.5s;	/* Safari 和 Chrome */
+				-o-transition: right 0.5s;
+			}
+			button { border: 1px solid #ddd; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="">
+				容器div
+			</div>
+			<button id="click">click</button>
+		</div>
+		<div id="sideslip" class="sideslip">
+			<ul class="sideslipUl">
+				<li><a href="">李克强谈马方宣布MH370失事：这是个艰难时刻</a></li>
+				<li><a href="">李克强谈马方宣布MH370失事：这是个艰难时刻</a></li>
+				<li><a href="">李克强谈马方宣布MH370失事：这是个艰难时刻</a></li>
+				<li><a href="">李克强谈马方宣布MH370失事：这是个艰难时刻</a></li>
+				<li><a href="">李克强谈马方宣布MH370失事：这是个艰难时刻</a></li>
+				<li><a href="">李克强谈马方宣布MH370失事：这是个艰难时刻</a></li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			(function(){
+				document.getElementById("click").onclick = function() {
+					document.getElementById("sideslip").style.right = 0;
+				};
+			})();
+		</script>
+	</body>
+	
+</html>

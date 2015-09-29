@@ -1,0 +1,205 @@
+
+@font-face {font-family: 'global-nav__iconfont';
+  src: url('iconfont1.eot');
+  src: url('iconfont1.eot?#iefix') format('embedded-opentype'),
+  url('iconfont1.woff') format('woff'),
+  url('iconfont1.ttf') format('truetype'),
+  url('iconfont1.svg#uxiconfont') format('svg');
+}
+
+.global-nav {
+	position: fixed;
+	left: -100%;
+	bottom: 0;
+	z-index: 1013;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	width: 100%;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.global-nav__nav-wrap {
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+	height: 57px;
+	border-top: 1px solid #e5e5e5;
+	background-color: #fff;
+}
+.global-nav__nav-item{
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+	overflow: hidden;
+}
+.global-nav__nav-link {
+	position: relative;
+	display: block;
+	width: 62px;
+	height: 50px;
+	line-height: 24px;
+	padding-top: 7px;
+	text-align: center;
+	white-space: nowrap;
+	/*color: #999;*/
+}
+
+.global-nav__nav-link:active{
+	color: #ff7171;
+}
+.global-nav__iconfont{
+	font-family:"global-nav__iconfont";
+	font-size:24px;
+	font-style:normal;
+}
+.global-nav__nav-tit{
+	display: block;
+	font-size: 12px;
+}
+.global-nav__nav-shop-cart-num,.global-nav__operate-cart-num{
+	position: absolute;
+	height: 16px;
+	line-height: 16px;
+	padding: 0 5px;
+	border-radius: 8px;
+	background-color: #fd4609;
+	color: #fff;
+	font-size: 12px;
+}
+.global-nav__nav-shop-cart-num{
+	right: 7px;
+	top:4px;
+}
+.global-nav__operate-wrap{
+	position: relative;
+	width: 62px;
+	height: 58px;
+	background-color: rgba(153,153,153,.75);
+	right: -62px;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.global-nav__operate-wrap:before,.global-nav__operate-wrap:after{
+	content: '';
+	position: absolute;
+	top: 24px;
+	width: 7px;
+	height: 7px;
+	border-top:2px solid #fff;
+	border-right: 2px solid #fff;
+}
+.global-nav__operate-wrap:before{
+	display: none;
+	right: 3px;
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+.global-nav__operate-wrap:after{
+	right: 7px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.global-nav__yhd-logo{
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	width: 32px;
+	height: 29px;
+	background-image:url(global_nav_login.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	-webkit-transition: width .5s ease;
+	transition: width .5s ease;
+}
+.global-nav__operate-cart-num{
+	right: -8px;
+	top: -8px;
+	-webkit-transition: opacity .5s ease;
+	transition: opacity .5s ease;
+}
+.global-nav--current{
+	left:0;
+}
+.global-nav--current .global-nav__operate-wrap{
+	width: 20px;
+	right: 0;
+}
+.global-nav--current .global-nav__yhd-logo{
+	width: 0;
+}
+.global-nav--current .global-nav__operate-cart-num{
+	opacity: 0;
+}
+.global-nav--current .global-nav__operate-wrap:before{
+	display: block;
+}
+.global-nav--current .global-nav__operate-wrap:after{
+	display: none;
+}
+
+
+
+/*  添加的字体图标样式  */
+@font-face {font-family: "jc-iconfont";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),  
+  url('iconfont.woff') format('woff'), 
+  url('iconfont.ttf') format('truetype'),  
+  url('iconfont.svg#jc-iconfont') format('svg'); 
+}
+
+.jc-iconfont {
+  font-family:"jc-iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.jc-icon-dianpu:before { content: "\e622"; }
+.jc-icon-baobao:before { content: "\e624"; }
+.jc-icon-bianji:before { content: "\e61b"; }
+.jc-icon-yinxingqia:before { content: "\e61e"; }
+.jc-icon-gouwuche:before { content: "\e608"; }
+.jc-icon-zuanshi:before { content: "\e609"; }
+.jc-icon-trade:before { content: "\e60a"; }
+.jc-icon-choose:before { content: "\e617"; }
+.jc-icon-checked:before { content: "\e615"; }
+.jc-icon-top:before { content: "\e623"; }
+.jc-icon-xuanzhong:before { content: "\e61c"; }
+.jc-icon-find:before { content: "\e613"; }
+.jc-icon-icon-share:before { content: "\e618"; }
+.jc-icon-radio2:before { content: "\e601"; }
+.jc-icon-clear:before { content: "\e614"; }
+.jc-icon-fanhui:before { content: "\e605"; }
+.jc-icon-iconorder:before { content: "\e61f"; }
+.jc-icon-wodexiaoxi:before { content: "\e612"; }
+.jc-icon-jian:before { content: "\e610"; }
+.jc-icon-menu:before { content: "\e606"; }
+.jc-icon-pagesmap:before { content: "\e620"; }
+.jc-icon-shanchu:before { content: "\e61d"; }
+.jc-icon-radio:before { content: "\e616"; }
+.jc-icon-xiala2:before { content: "\e603"; }
+.jc-icon-cuo:before { content: "\e60b"; }
+.jc-icon-danxuan:before { content: "\e602"; }
+.jc-icon-dianpu1:before { content: "\e60c"; }
+.jc-icon-chaxun:before { content: "\e60f"; }
+.jc-icon-iconxx:before { content: "\e621"; }
+.jc-icon-map:before { content: "\e61a"; }
+.jc-icon-xing:before { content: "\e60d"; }
+.jc-icon-weixin:before { content: "\e60e"; }
+.jc-icon-toupiao:before { content: "\e604"; }
+.jc-icon-youhuiquan:before { content: "\e625"; }
+.jc-icon-aixin:before { content: "\e607"; }
+.jc-icon-right:before { content: "\e600"; }
+.jc-icon-jia:before { content: "\e611"; }
+.jc-icon-fasongshibai:before { content: "\e626"; }
+.jc-icon-jiantou1:before { content: "\e619"; }

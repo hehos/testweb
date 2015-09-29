@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/laytpl.js"></script>
+</head>
+<body>
+<script id="demo" type="text/html">
+    <h1 class="{{ d.title }}">{{ d.title }}</h1>
+    <ul>
+        {{# for(var i = 0, len = d.list.length; i < len; i++){ }}
+        <li>
+            <span>姓名：{{ d.list[i].name }}</span>
+            <span>城市：{{ d.list[i].city }}</span>
+        </li>
+        {{# } }}
+    </ul>
+</script>
+
+<div id="view"></div>
+
+<script>
+
+    var data = {
+        title: '前端攻城师',
+        list: [
+            {name: '贤心', city: '杭州'},
+            {name: '谢亮', city: '北京'},
+            {name: '浅浅', city: '杭州'},
+            {name: 'Dem', city: '北京'}
+        ]
+    };
+    var gettpl = document.getElementById('demo').innerHTML;
+    laytpl(gettpl).render(data, function(html){
+        document.getElementById('view').innerHTML = html;
+    });
+</script>
+</body>
+</html>

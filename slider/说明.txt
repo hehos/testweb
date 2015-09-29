@@ -1,0 +1,33 @@
+幻灯片概要：水平堆叠式3D效果幻灯片。
+
+布局效果：宽度根据容器的宽度来定位布局展示。高度自适应。
+
+参数说明：
+	pileAreaWidth: 			堆叠效果区域的宽度。
+	itemWidth:   				条目宽度
+	itemHeight: 				条目高度	
+	itemOffsetTop: 			条目上方的偏移量。
+	itemOffsetRight: 		条目右边的偏移量。
+//	pileSpace: 					堆叠水平间距。
+	itemZoomRatio:      堆叠的条目递变的缩放比例。
+	
+条目堆叠的递变算法说明：
+	1,堆叠效果区域的宽度按照条目个数确定。
+			具体算法： item = 1,2,3,4	  pileAreaWidth = 6/18;
+								item = 5,6     	pileAreaWidth = 7/18;
+								item = 7,8.... 	pileAreaWidth = 8/18;
+	2,条目高度的递变算法按照比例缩放:  itemZoomRatio = small/big = 0.8
+	3,条目上方偏移量的具体算法：	itemOffsetTop = ((itemHeight / itemZoomRatio) - itemHeight)* 2/3			
+	4,条目右边偏移量的具体算法：   itemOffsetRight = itemWidth * 2/5
+	
+参考效果:http://www.ximaweiyu.com.cn/index.htm
+
+
+测试数据
+
+	width： 100  height：100
+	
+	item1  	w: 200  h: 100  itemOffsetTop: 
+	item2		w: 160	h: 80		itemOffsetTop:13.3     itemOffsetRight:64
+	item3		w: 128	h: 64													 itemOffsetRight:51.2
+	

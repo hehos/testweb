@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello world</title>
+</head>
+<body>
+  <input type="button" id="myButton" value="Click me" />
+  <script type="text/javascript" src="<a onclick="javascript:pageTracker._trackPageview('/outgoing/pub.idqqimg.com/lib/jx/1.0.1/jx-uiless.js');" href="http://pub.idqqimg.com/lib/jx/1.0.1/jx-uiless.js">http://pub.idqqimg.com/lib/jx/1.0.1/jx-uiless.js</a>" charset="UTF-8"></script>
+  <script type="text/javascript">
+  Jx().$package("helloWorld",function(J){
+    function handler(e){
+      alert('Hello world!');
+    }
+    var el=J.dom.id('myButton');
+    J.event.on(el,'click',handler);
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	</head>
+	<body>
+
+    <!--  begin  -->
+    <div id="js-returnTop" class="returnTop">
+    </div>
+    <script type="text/javascript">
+        (function() {
+            $("#js-returnTop").append('<style>.returnTop{display:none;position:fixed;z-index:100;right:15px;bottom:30px;border:1px solid #ddd;border-radius:8px;background-color:#f8f8f8}.returnTop ul,.returnTop li{list-style:none;padding:0;margin:0}.returnTop.pc-client{border-radius:0}.returnTop .iconItem{box-sizing:content-box;width:2em;height:2.2em;line-height:2;text-align:center;padding:5px;cursor:pointer;border-bottom:1px solid #ddd;font-size:14px}.returnTop .iconItem .txt{display:none;line-height:1.1em;font-size:14px;text-decoration:none;color:#999}.returnTop .iconItem:last-child{margin-bottom:0;border-bottom:0}.returnTop .iconItem:hover .icon{display:none}.returnTop .iconItem:hover .txt{display:inline-block}.returnTop .iconItem .icon-mid{font-size:20px}.returnTop .iconItem .icon{display:inline-block;position:relative;width:1em;height:1em;line-height:100%;vertical-align:middle}.returnTop .iconItem .icon-arrowUp{top:.5em}.returnTop .iconItem .icon-arrowUp{left:.25em}.returnTop .iconItem .icon-arrowUp{position:absolute;width:.5em;height:.5em;background-color:#666}.returnTop .iconItem .icon-arrowUp:after{top:-1em;border-color:transparent transparent #666 transparent}.returnTop .iconItem .icon-arrowUp:after{left:-0.25em}.returnTop .iconItem .icon-arrowUp:after{content:"";position:absolute;width:0;height:0;border-width:.5em;border-style:solid}</style>');
+            $("#js-returnTop").append('<ul><li class="iconItem"><a href="javascript:scroll(0,0);" class="icon icon-mid"><span class="icon-arrowUp"></span></a> <a class="txt" href="javascript:scroll(0,0);">回到顶部</a></li></ul>');
+            // 检测 移动端还是pc端
+            function IsPC() {
+                var userAgentInfo = navigator.userAgent;
+                var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+                var flag = true;
+                for (var i = 0; i < Agents.length; i++) {
+                    if (userAgentInfo.indexOf(Agents[i]) > 0) { flag = false; break; }
+                }
+                return flag;
+            }
+            window.onscroll = function() {
+                var offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrolltop;
+                if(offset > 300) {
+                    document.getElementById("js-returnTop").style.display = "inline-block";
+                } else {
+                    document.getElementById("js-returnTop").style.display = "none";
+                }
+            }
+            if(IsPC()) {
+                var cln = document.getElementById("js-returnTop").getAttribute("class");
+                cln += " pc-client";
+                document.getElementById("js-returnTop").setAttribute("class", cln);
+            }
+        })();
+    </script>
+    <!--  end  -->
+
+
+    <div style="height: 1000px;">fdasf</div>
+		<div>
+			<ul>
+				<li><a href=""><span></span></a></li>
+			</ul>
+			<span></span>
+		</div>
+		
+		ul>.item*3
+	</body>
+</html>

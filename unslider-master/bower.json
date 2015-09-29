@@ -1,0 +1,13 @@
+{
+  "name": "unslider",
+  "main": "src/unslider.min.js",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "ignore" : [
+    "site/",
+	"readme.md",
+	".gitignore"
+  ]
+}

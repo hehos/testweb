@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<br /><br /><br /><br />
+		<div class="wrap" style="height: 500px; background-color: green; overflow: auto;">
+			<div class="cont" style="height: 1000px; margin: 0 50px; background-color: blue;">
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(".wrap").scroll(function() {
+				console.log("scrollTop：" + $(this).scrollTop());
+				console.log("height：" + $(this).height());
+				console.log("height：" + $(".cont").height());
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			function Trim(str,is_global) 
+				{ 
+				var result; 
+				result = str.replace(/(^\s+)|(\s+$)/g,""); 
+				if(is_global.toLowerCase()=="g") 
+				result = result.replace(/\s/g,""); 
+				return result; 
+				} 
+				
+				var testStr = " fdfj  jfasdjfas  sa dfaskdjfksald lkafsd fdsfdfdsa   ";
+				alert(Trim(testStr, "g"));
+		</script>
+	</body>
+</html>

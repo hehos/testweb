@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE</title>
+    <link type="text/css" rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css" >
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/vue.min.js"></script>
+</head>
+<body>
+
+
+<head>
+    Hello VUE
+</head>
+
+<div id="demo">
+    <h1>{{title | uppercase}}</h1>
+    <ul>
+        <li
+                v-repeat="todos"
+                v-on="click: done = !done"
+                class="{{done ? 'done' : ''}}">
+            {{content}}
+        </li>
+    </ul>
+</div>
+<script>
+    var demo = new Vue({
+        el: '#demo',
+        data: {
+            title: 'todos',
+            todos: [
+                {
+                    done: true,
+                    content: 'Learn JavaScript'
+                },
+                {
+                    done: false,
+                    content: 'Learn Vue.js'
+                }
+            ]
+        }
+    })
+</script>
+
+<script>
+    var dll = [
+        {
+            name : 'Color',
+            items : [
+                {'name' : 'red', 'enable' : true},
+                {'name' : 'green', 'enable' : true},
+                {'name' : 'orange', 'enable' : true}
+            ]
+        },
+        {
+            name : 'Spec',
+            items : [
+                {'name' : 'spec1', 'enable' : true},
+                {'name' : 'spec2', 'enable' : true},
+                {'name' : 'spec3', 'enable' : true}
+            ]
+        },
+        {
+            name : 'Size',
+            items : [
+                {'name' : 'size1', 'enable' : true},
+                {'name' : 'size2', 'enable' : true},
+                {'name' : 'size3', 'enable' : true}
+            ]
+        }
+    ];
+
+    var dllData = [
+        ['red',  'green',  'orange'],
+        ['spec1',  'spec2',  'spec3'],
+        ['size1',  'size2',  'size3']
+    ];
+
+    var values = {
+        '0_0_0' :  {'price' : '100', 'price2' : '101'},
+        '0_0_1' :  {'price' : '200', 'price2' : '201'}
+    };
+
+    var loopN = function(data, values) {
+        var head = '';
+        var n = data.length, stack = [];
+        var html = '';
+        var render = function(l) {
+            var i;
+            if(l == n){
+                var row = '', key = '';
+                for(i = 0; i < n; i++){
+                    key += '_' + stack[i].index;
+                    row += '<td>' + stack[i].value + '</td>';
+                }
+                key = key.replace(/^_/, '');
+                html += "<tr>" +  row + "\n";
+                html += "<td><input type='text' value='" + (values[key] ? values[key].price : '') + "'></td>";
+                html += "<td><input type='text' value='" + (values[key] ? values[key].price2 : '') + "'></td>";
+                html += "</tr>";
+                return;
+            }
+
+            var j = data[l].length;
+            for(i = 0; i < j; i++){
+                stack[l] = {'index' : i, 'value' : data[l][i]};
+                render(l + 1);
+            }
+        }
+        render(0);
+        return "<table class='table'>" + html + "</table>";
+    }
+
+    document.write(loopN(dllData, values));
+
+</script>
+</body>
+</html>

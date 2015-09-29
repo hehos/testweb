@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bottomNav.css"/>
+		<script src="jquery-1.11.2.min.js"></script>
+		<style type="text/css">
+			.bottom-nav {
+				width: 1200px;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bottom-nav">
+			<h4>正儿八经有限公司的优势</h4>
+			<ul>
+				<li>
+					<p class="txt">service<br />服务</p>
+					<span class="icon bottomIcon-1"></span>
+					<p class="txt2">呈现百分之百的承诺<br />追求百分之百的满意</p>
+				</li>
+				<li>
+					<p class="txt">grade<br />品味</p>
+					<span class="icon bottomIcon-2"></span>
+					<p class="txt2">简约 大气<br />时尚 环保</p>
+				</li>
+				<li>
+					<p class="txt">credit<br />信誉</p>
+					<span class="icon bottomIcon-3"></span>
+					<p class="txt2">诚信 一言九鼎<br />一诺千金 真实</p>
+				</li>
+				<li>
+					<p class="txt">style<br />风格</p>
+					<span class="icon bottomIcon-4"></span>
+					<p class="txt2 one-row">四种风格系列完美呈现</p>
+				</li>
+				<li>
+					<p class="txt">colour<br />色彩</p>
+					<span class="icon bottomIcon-5"></span>
+					<p class="txt2 one-row">18种颜色随心所欲</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		(function() {
+			var items = $(".bottom-nav li");
+			$(".bottom-nav li").mouseover(function() {
+				var countWidth = (100-40)/(items.length-1);
+				$.each(items, function(i, item) {    
+					$(item).css("width", countWidth + "%");                                                          
+				});
+				$(this).css("width", "40%");
+				$(this).addClass("js-show-desc");
+			});
+			$(".bottom-nav li").mouseout(function() {
+				$.each(items, function(i, item) {    
+					$(item).css("width", "");                                                          
+				});
+				$(this).removeClass("js-show-desc");
+			});
+		})();
+	</script>
+</html>

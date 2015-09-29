@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/laytpl.js"></script>
+
+    <script src="js/base.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+
+<div class="container">
+<br><br><br>
+
+
+    <script id="config-template" type="text/html">
+    <div class="config-goods">
+        {{# for(var i = 0, len = d.length; i < len; i++){ }}
+        <div class="cate-box">
+            <div class="pull-left">
+                <input class="cate-name" type="text" value="{{ d[i].name }}"/>
+            </div>
+            <ul class="items-cont col-md-3">
+                {{# for(var j = 0, len = d[i].items.length; j < len; j++){ }}
+                {{# var checked = d[i].items[j].enable; }}
+                <li class="cell-cont">
+                    <label>
+                        <input type="checkbox" {{ checked ? "checked" : "" }} />
+                        <span style="display: {{ checked ? 'none;' : 'inline-block;' }}">{{ d[i].items[j].name }}</span>
+                        <input class="cell-edit" style="display: {{ checked ? 'inline-block;' : 'none;' }}" type="text"
+                               value="{{ d[i].items[j].name }}" />
+                    </label>
+                </li>
+                {{# } }}
+
+                <li class="ctrl-form">
+                    <div class="inputs">
+                        <input class="btn-add-input" type="text"/>
+                        <button class="btn-confirm btn btn-info">确定</button>
+                        <button class="btn-cancel btn btn-warning">取消</button>
+                    </div>
+                    <button class="btn-add-cate btn btn-default">添加规格值</button>
+                </li>
+            </ul>
+        </div>
+        {{# } }}
+
+        <div class="cate-group-result">
+            <div class="pull-left">
+                库存配置
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        {{# for(var i = 0, len = d.length; i < len; i++){ }}
+                        <th>{{ d[i].name }}</th>
+                        {{# } }}
+
+                        <th><span>*</span>市场价<i class="glyphicon glyphicon-pencil"></i></th>
+                        <th><span>*</span>价格<i class="glyphicon glyphicon-pencil"></i></th>
+                        <th><span>*</span>库存<i class="glyphicon glyphicon-pencil"></i></th>
+                        <th><span>*</span>预警值<i class="glyphicon glyphicon-pencil"></i></th>
+                        <th>商家货号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>红色</td>
+                        <td>市场价</td>
+                        <td><input type="text"/></td>
+                        <td><input type="text"/></td>
+                    </tr>
+                    <tr>
+                        <td>红色</td>
+                        <td>价格</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </script>
+    <div id="config-view">
+
+    </div>
+</div>
+
+<script>
+    var alone = new Alone();
+
+    alone.render();
+</script>
+
+</body>
+</html>

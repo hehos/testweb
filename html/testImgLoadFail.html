@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+
+<div>
+    <img src="../img/122.jpg" alt="" onerror="imgError();" />
+    <img src="../img/2.jpg" alt=""/>
+    <img src="../img/3.jpg" alt=""/>
+
+</div>
+
+<script>
+//    window.onload = function () {
+            $("img").error(function() {
+
+                alert("fail");
+                $(this).hide();
+            });
+//    }
+    function imgError() {
+//        alert("fail");
+    }
+
+</script>
+</body>
+</html>

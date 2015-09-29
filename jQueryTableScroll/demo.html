@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0073)http://www.17sucai.com/preview/1/2013-05-04/jquery.tablescroll_/demo.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>jQuery table scroll表格加滚动条插件</title>
+<meta name="description" content="jquery表格插件table scroll给表格加滚动条效果，让表格高度可以固定，内容益处自适应滚动条效果。这款jQuery表格插件提高了表格的用户体验。">
+</head>
+
+<body>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+.demo{width:500px;margin:40px auto 0 auto;}
+/* tablescroll */
+.tablescroll{font:12px normal Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;background-color:#fff;}
+.tablescroll td,.tablescroll_wrapper,.tablescroll_head,.tablescroll_foot{border:1px solid #ccc;}
+.tablescroll td{padding:5px;}
+.tablescroll_wrapper{border-left:0;}
+.tablescroll_head{font-size:12px;font-weight:bold;background-color:#eee;border-left:0;border-top:0;margin-bottom:3px;}
+.tablescroll thead td{border-right:0;border-bottom:0;}
+.tablescroll tbody td{border-right:0;border-bottom:0;}
+.tablescroll tbody tr.first td{border-top:0;}
+.tablescroll_foot{font-weight:bold;background-color:#eee;border-left:0;border-top:0;margin-top:3px;}
+.tablescroll tfoot td{border-right:0;border-bottom:0;}
+</style>
+
+<div class="demo">
+	<div class="tablescroll"><table class="tablescroll_head" cellspacing="0" style="width: 497px;"><thead>
+			<tr>
+				<td style="width: 80px;">城市</td>
+				<td style="width: 59px;">状态代码</td>
+				<td style="width: 43px;">zip</td>
+				<td style="width: 72px;">纬度</td>
+				<td style="width: 77px;">经度</td>
+				<td style="width: 99px;">县</td>
+			</tr>
+		</thead></table><div class="tablescroll_wrapper" style="width: 496px; height: 150px; overflow-y: auto; overflow-x: hidden;"><table id="thetable" cellspacing="0" cellpadding="0" class="tablescroll_body" style="width: 479px;">
+		
+		<tbody>
+			<tr class="first">
+				<td style="width: 80px;">中国</td>
+				<td style="width: 59px;">NY</td>
+				<td style="width: 43px;">00501</td>
+				<td style="width: 72px;">40.8152</td>
+				<td style="width: 77px;">-73.0455</td>
+				<td style="width: 82px;">Suffolk</td>
+			</tr>
+			<tr>
+				<td>中国</td>
+				<td>NY</td>
+				<td>00544</td>
+				<td>40.8152</td>
+				<td>-73.0455</td>
+				<td>Suffolk</td>
+			</tr>
+			<tr>
+				<td>韩国</td>
+				<td>PR</td>
+				<td>00601</td>
+				<td>18.1788</td>
+				<td>-66.7516</td>
+				<td>韩国</td>
+			</tr>
+			<tr>
+				<td>Aguada</td>
+				<td>PR</td>
+				<td>00602</td>
+				<td>18.381389</td>
+				<td>-67.188611</td>
+				<td>Aguada</td>
+			</tr>
+			<tr>
+				<td>Aguadilla</td>
+				<td>PR</td>
+				<td>00603</td>
+				<td>18.4554</td>
+				<td>-67.1308</td>
+				<td>Aguadilla</td>
+			</tr>
+			<tr>
+				<td>Aguadilla</td>
+				<td>PR</td>
+				<td>00604</td>
+				<td>18.4812</td>
+				<td>-67.1467</td>
+				<td>Aguadilla</td>
+			</tr>
+			<tr>
+				<td>Aguadilla</td>
+				<td>PR</td>
+				<td>00605</td>
+				<td>18.429444</td>
+				<td>-67.154444</td>
+				<td>Aguadilla</td>
+			</tr>
+			<tr>
+				<td>Maricao</td>
+				<td>PR</td>
+				<td>00606</td>
+				<td>18.182778</td>
+				<td>-66.980278</td>
+				<td>Maricao</td>
+			</tr>
+			<tr>
+				<td>Anasco</td>
+				<td>PR</td>
+				<td>00610</td>
+				<td>18.284722</td>
+				<td>-67.14</td>
+				<td>Anasco</td>
+			</tr>
+			<tr>
+				<td>Angeles</td>
+				<td>PR</td>
+				<td>00611</td>
+				<td>18.286944</td>
+				<td>-66.799722</td>
+				<td>Utuado</td>
+			</tr>
+			<tr>
+				<td>Arecibo</td>
+				<td>PR</td>
+				<td>00612</td>
+				<td>18.4389</td>
+				<td>-66.6924</td>
+				<td>Arecibo</td>
+			</tr>
+			<tr>
+				<td>Arecibo</td>
+				<td>PR</td>
+				<td>00613</td>
+				<td>18.1399</td>
+				<td>-66.6344</td>
+				<td>Arecibo</td>
+			</tr>
+			<tr>
+				<td>Arecibo</td>
+				<td>PR</td>
+				<td>00614</td>
+				<td>18.1399</td>
+				<td>-66.6344</td>
+				<td>Arecibo</td>
+			</tr>
+			<tr>
+				<td>Bajadero</td>
+				<td>PR</td>
+				<td>00616</td>
+				<td>18.428611</td>
+				<td>-66.683611</td>
+				<td>Arecibo</td>
+			</tr>
+			<tr>
+				<td>Barceloneta</td>
+				<td>PR</td>
+				<td>00617</td>
+				<td>18.4525</td>
+				<td>-66.538889</td>
+				<td>Barceloneta</td>
+			</tr>
+		</tbody>
+		
+	</table></div><table class="tablescroll_foot" cellspacing="0" style="width: 497px;"><tfoot>
+			<tr>
+				<td style="width: 80px;">10</td>
+				<td style="width: 59px;">2</td>
+				<td style="width: 43px;">15</td>
+				<td align="center" style="width: 72px;">-</td>
+				<td align="center" style="width: 77px;">-</td>
+				<td style="width: 99px;">9</td>
+			</tr>
+		</tfoot></table></div>
+</div>
+	
+<script type="text/javascript" src="jquery-1.4.2.min(1).js"></script>
+<script type="text/javascript" src="jquery.tablescroll.js"></script>
+<script type="text/javascript">
+$(document).ready(function($){
+	$('#thetable').tableScroll({
+		width:480,
+		height:150
+	});
+});
+</script>
+	
+
+</body></html>

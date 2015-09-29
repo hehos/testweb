@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="pileSlider.css"/>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript" charset="utf-8"></script>
+		
+		<style type="text/css">
+			.container {
+				width: 80%;
+				margin: 20px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="pileSlider">
+				<ul class="items">
+					<!--<li class="item"><img src="10.jpg" alt="" /></li>
+					<li class="item"><img src="9.jpg" alt="" /></li>
+					<li class="item"><img src="8.jpg" alt="" /></li>
+					<li class="item"><img src="7.jpg" alt="" /></li>-->
+					<!--<li class="item"><img src="6.jpg" alt="" /></li>
+					<li class="item"><img src="5.jpg" alt="" /></li>-->
+					<li class="item"><img src="4.jpg" alt="" /></li>
+					<li class="item"><img src="3.jpg" alt="" /></li>
+					<li class="item"><img src="2.jpg" alt="" /></li>
+					<li class="item"><img src="1.jpg" alt="" /></li>
+				</ul>
+				<div class="sliderCtrl">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="pileSlider.js" type="text/javascript" charset="utf-8"></script>	
+	<script type="text/javascript">
+		// 组件使用方法及参数说明。
+		/**
+		"domObj": 							null,	// 组件操作的dom对象。(必须传递的参数)
+		"pileAreaWidthRatio":		2/5,	// 堆叠效果区域的宽度比例。
+		"itemSizeZoomRatio":		0.8,	// 堆叠的条目大小递变的缩放比例
+		"itemOffsetTopRatio": 	2/3,	// 条目堆叠垂直方向的偏移比例
+		"itemOffsetRightRatio":	2/5		// 条目堆叠水平方向的偏移比例
+		 * 
+		 */
+//		$(document).ready(function() {
+//			
+//  	});
+		window.onload = function() {
+			var pileSlider = new PileSlider({
+				"domObj": $(".pileSlider")
+			});
+			pileSlider.run();
+		}
+    
+	</script>
+	
+</html>

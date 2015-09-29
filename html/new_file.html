@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="renderer" content="webkit"><title>选项卡 - default（蓝色选项卡） | Amaze UI</title><meta name="description" content=""><link rel="alternate icon" type="image/png" href="http://a.static.amazeui.org/assets/2.x/i/favicon.png"><link rel="apple-touch-icon-precomposed" href="http://a.static.amazeui.org/assets/2.x/i/app-icon72x72@2x.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="stylesheet" href="http://a.static.amazeui.org/assets/2.x/css/amazeui.min.css"><link rel="stylesheet" href="http://a.static.amazeui.org/assets/2.x/css/amaze.min.css"><link rel="canonical" href="http://amazeui.org/widgets/tabs/default/0?_ver=2.x"><script src="http://a.static.amazeui.org/assets/2.x/js/jquery.min.js"></script><script src="http://a.static.amazeui.org/assets/2.x/js/handlebars.min.js"></script><script src="http://a.static.amazeui.org/assets/2.x/js/amazeui.min.js"></script><script type="text/javascript" async="" src="http://static.duoshuo.com/embed.js" charset="UTF-8"></script><link type="text/css" rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?d6149e1c.css"><style type="text/css">/**
+* Duoshuo Comments Style for Amaze UI
+* by Minwe
+*/
+
+#ds-thread #ds-reset .ds-meta {
+    border-bottom-color: #eee;
+}
+
+
+/* Like button */
+
+#ds-thread #ds-reset a.ds-like-thread-button {
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    border-radius: 2px;
+}
+
+
+/* Comments counter */
+
+#ds-thread #ds-reset li.ds-tab a.ds-current {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+}
+
+
+#ds-thread #ds-reset #ds-hot-posts {
+    border-color: #eee;
+    border-width: 0 0 1px;
+    margin: 10px 0;
+    padding-bottom: 15px;
+    border-radius: 0;
+}
+
+
+/* Main avatar */
+
+#ds-reset .ds-avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 1px;
+    background-color: #fff;
+}
+
+
+/* Comments list */
+
+#ds-thread #ds-reset .ds-comments {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0 20px;
+    margin-bottom: 5px;
+}
+
+
+#ds-thread #ds-reset li.ds-post {
+    border-top: none;
+}
+
+
+#ds-thread #ds-reset .ds-post-self {
+    padding: 10px 2px;
+}
+
+
+#ds-thread #ds-reset .ds-comment-body {
+    position: relative;
+    margin-left: 62px;
+    border: 1px solid #ddd;
+    padding: 0 10px 10px!important;
+    border-radius: 2px;
+}
+
+
+#ds-thread #ds-reset .ds-comment-body:before,
+#ds-thread #ds-reset .ds-comment-body:after {
+    position: absolute;
+    top: 8px;
+    left: -8px;
+    right: 100%;
+    width: 0;
+    height: 0;
+    display: block;
+    content: " ";
+    border-color: transparent;
+    border-style: solid solid dotted;
+    border-width: 8px 8px 8px 0;
+    pointer-events: none;
+}
+
+
+#ds-thread #ds-reset .ds-comment-body:before {
+    border-right-color: #dedede;
+    z-index: 1;
+}
+
+
+#ds-thread #ds-reset .ds-comment-body:after {
+    border-right-color: #f8f8f8;
+    margin-left: 1px;
+    z-index: 2;
+}
+
+
+#ds-thread #ds-reset .ds-comment-header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+
+#ds-thread #ds-reset .ds-comment-body p {
+    font-size: 14px;
+}
+
+
+#ds-thread #ds-reset .ds-comment-footer {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+
+/* Nested */
+
+#ds-thread #ds-reset #ds-ctx {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+
+#ds-reset #ds-ctx .ds-ctx-entry .ds-avatar {
+    border-radius: 50%;
+}
+
+
+/* Comment textarea */
+
+#ds-thread #ds-reset .ds-textarea-wrapper {
+    background-image: none;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-color: #ddd;
+}
+
+
+#ds-reset .ds-gradient-bg {
+    background: #f8f8f8;
+}
+
+
+#ds-thread #ds-reset .ds-post-options {
+    border-bottom-left-radius: 2px;
+    border-color: #ddd;
+    height: 36px;
+}
+
+
+#ds-thread #ds-reset .ds-sync {
+    line-height: 34px;
+}
+
+
+#ds-thread #ds-reset .ds-toolbar-buttons {
+    top: 8px;
+    left: 10px;
+}
+
+
+#ds-thread #ds-reset .ds-textarea-wrapper textarea {
+    font-size: 14px;
+}
+
+
+/* Post Butoon */
+
+#ds-thread #ds-reset .ds-post-button {
+    border-bottom-right-radius: 2px;
+    background: #3bb4f2;
+    color: #fff;
+    text-shadow: none;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    height: 38px;
+}
+
+
+#ds-thread #ds-reset .ds-post-button:hover {
+    background: #0f9ae0;
+    color: #fff;
+    text-shadow: none;
+}
+
+
+#ds-thread #ds-reset .ds-post-button:focus,
+#ds-thread #ds-reset .ds-post-button:active {
+    outline: 0;
+}
+
+
+#ds-thread #ds-reset .ds-paginator {
+    margin-bottom: 20px;
+}
+
+
+#ds-thread #ds-reset .ds-paginator a:hover,
+#ds-thread #ds-reset .ds-paginator a.ds-current {
+    border-radius: 2px;
+    border-color: #ddd;
+}
+
+
+/** Icon - Dependence FontAwesome */
+
+.ds-icon:before,
+.ds-add-emote:before,
+.ds-toolbar-button:before {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: baseline;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.ds-icon-heart,
+.ds-icon-reply,
+.ds-icon-like,
+.ds-icon-share,
+.ds-icon-report,
+.ds-icon-delete,
+.ds-icon-settings {
+    line-height: 13px !important;
+    background-image: none !important;
+}
+
+
+.ds-icon-heart:before {
+    content: "\f004";
+    color: #dd514c;
+}
+
+
+.ds-icon-reply:before {
+    content: "\f112";
+}
+
+
+.ds-icon-like:before {
+    content: "\f08a";
+}
+
+
+.ds-icon-share:before {
+    content: "\f064";
+}
+
+
+.ds-icon-report:before {
+    content: "\f06a";
+}
+
+
+.ds-icon-delete:before {
+    content: "\f00d";
+}
+
+
+.ds-icon-settings {
+    font-size: 12px !important;
+}
+
+
+.ds-icon-settings:before {
+    content: "\f013";
+}
+
+
+.ds-add-emote,
+.ds-toolbar-button {
+    line-height: 19px !important;
+    background: none !important;
+    font-size: 18px !important;
+}
+
+
+.ds-add-emote:before {
+    content: "\f118";
+}
+
+
+.ds-add-image:before {
+    content: "\f03e";
+}
+
+
+/* Narrow */
+#ds-thread.ds-narrow #ds-reset .ds-comment-body {
+    margin-left: 45px;
+}
+</style></head>
+	<body>
+		<table align="center" border="1px solid #ddd" style="height:1860px; width:680px">
+	<tbody>
+		<tr>
+			<td style="width:136px">
+			<p style="text-align:center"><strong>评选奖项&nbsp;</strong></p>
+			</td>
+			<td colspan="4" style="width:545px">
+			<p style="text-align:center"><strong>评选基本标准</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="10" style="width:136px">
+			<p style="text-align:center"><strong>最具综合实力市场</strong></p>
+
+			<p style="text-align:center"><strong>(每个城市限1家)</strong></p>
+			</td>
+			<td style="width:96px">
+			<p><strong>评选目的</strong></p>
+			</td>
+			<td colspan="3" style="width:449px">
+			<p>用以评选出四川建材家居行业中，区域规模较大、知名度较高、硬件设施和配套服务俱佳，综合实力较强的市场。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3" style="width:96px">
+			<p><strong>基本</strong></p>
+
+			<p><strong>情况</strong></p>
+			</td>
+			<td style="width:101px">
+			<p>开业时间</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>市场建成营业3年以上，当地相对时间最长</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:101px">
+			<p>营业面积</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>市场营业面积达2万平方米以上，当地前3强。</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:101px">
+			<p>商户数量</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>综合类市场达200户以上，单品类、材料、辅料、二级地市市场入驻商家达100户以上。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="width:96px">
+			<p><strong>经营</strong></p>
+
+			<p><strong>情况</strong></p>
+			</td>
+			<td style="width:101px">
+			<p>商铺空置率</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>入驻商家正常营业率达95%以上。</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:101px">
+			<p>人气指数</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>当地前3强。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:96px">
+			<p><strong>配套</strong></p>
+
+			<p><strong>与</strong></p>
+
+			<p><strong>服务</strong></p>
+			</td>
+			<td style="width:101px">
+			<p>设备设施</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>各种配套设施设备完善，运转情况十分良好。</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:101px">
+			<p>装修档次</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>市场规划分区布局合理。</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:101px">
+			<p>物流配送</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>物流配送齐全，收费合理。</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:101px">
+			<p>售后服务</p>
+			</td>
+			<td colspan="2" style="width:348px">
+			<p>能全面兑现各项服务承诺，口碑良好。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="11" style="width:136px">
+			<p style="text-align:center"><strong>最具发展潜力市场</strong></p>
+
+			<p style="text-align:center"><strong>(每个城市限1家)</strong></p>
+			</td>
+			<td style="width:96px">
+			<p><strong>评选目的</strong></p>
+			</td>
+			<td colspan="3" style="width:449px">
+			<p>用以筛选出四川建材家居行业中，规模较大、知名度较高，无重大投诉曝光事件，口碑良好，最具发展潜力的市场。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="6" style="width:96px">
+			<p><strong>基本</strong></p>
+
+			<p><strong>情况</strong></p>
+			</td>
+			<td colspan="2" style="width:109px">
+			<p>开业时间</p>
+			</td>
+			<td style="width:340px">
+			<p>市场即将建成或营业时间不超过2年。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>营业面积</p>
+			</td>
+			<td style="width:340px">
+			<p>市场营业面积达5万平方米以上，当地前3强。符合当地城市规划。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>商户数量</p>
+			</td>
+			<td style="width:340px">
+			<p>综合类市场达300户以上，单品类、材料、辅料、二级地市市场入驻商家达50户以上。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>广告投放</p>
+			</td>
+			<td style="width:340px">
+			<p>年广告投放总金额达100万元以上。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>运营情况</p>
+			</td>
+			<td style="width:340px">
+			<p>有专业招商策划团队，运营模式创新</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>投资商背景</p>
+			</td>
+			<td style="width:340px">
+			<p>实力雄厚，品牌意识强，在国内有同类项目成功案例。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:96px">
+			<p><strong>配套</strong></p>
+
+			<p><strong>与</strong></p>
+
+			<p><strong>服务</strong></p>
+			</td>
+			<td colspan="2" style="width:109px">
+			<p>设备设施</p>
+			</td>
+			<td style="width:340px">
+			<p>各种配套设施设备完善，停车条件良好。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>装修档次</p>
+			</td>
+			<td style="width:340px">
+			<p>市场分区布局合理，店面装修上档次。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>物流配送</p>
+			</td>
+			<td style="width:340px">
+			<p>物流配送齐全，收费合理。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>售后服务</p>
+			</td>
+			<td style="width:340px">
+			<p>现代化售后流程全，服务周到，口碑良好。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="10" style="width:136px">
+			<p style="text-align:center"><strong>电商应用最具创新市场</strong></p>
+
+			<p style="text-align:center"><strong>(每个城市限1家)</strong></p>
+			</td>
+			<td style="width:96px">
+			<p><strong>评选目的</strong></p>
+			</td>
+			<td colspan="3" style="width:449px">
+			<p>用以评选出四川建材家居行业中，区域规模较大、知名度较高、口碑较好，拥有较好的电子商务创新能力的市场。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3" style="width:96px">
+			<p><strong>基本</strong></p>
+
+			<p><strong>情况</strong></p>
+			</td>
+			<td colspan="2" style="width:109px">
+			<p>开业时间</p>
+			</td>
+			<td style="width:340px">
+			<p>卖场即将建成或营业时间不超过2年</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>营业面积</p>
+			</td>
+			<td style="width:340px">
+			<p>卖场营业面积达2万平方米以上，当地前3强。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>商户数量</p>
+			</td>
+			<td style="width:340px">
+			<p>综合类卖场达200户以上，单品类、材料、辅料、二级地市卖场入驻商家达50户以上。</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="width:96px">
+			<p><strong>经营</strong></p>
+
+			<p><strong>情况</strong></p>
+			</td>
+			<td colspan="2" style="width:109px">
+			<p>广告投放</p>
+			</td>
+			<td style="width:340px">
+			<p>年广告投放总金额达100万元以上。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>运营情况</p>
+			</td>
+			<td style="width:340px">
+			<p>有专业招商策划团队，运营模式创新</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4" style="width:96px">
+			<p><strong>电子商务发展情况</strong></p>
+			</td>
+			<td colspan="2" style="width:109px">
+			<p>基础设备</p>
+			</td>
+			<td style="width:340px">
+			<p>具有较完善的网络基础设备，使用情况良好。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>应用率</p>
+			</td>
+			<td style="width:340px">
+			<p>商场式卖场全面实现电子商务化；或摊位制市场实现商户电子商务应用率超60%。</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>创新能力</p>
+			</td>
+			<td style="width:340px">
+			<p>拥有良好的、持续不断的电子商务创新能力</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:109px">
+			<p>售后服务</p>
+			</td>
+			<td style="width:340px">
+			<p>售后流程较好，服务周到，口碑较好。</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+	</body>
+</html>
