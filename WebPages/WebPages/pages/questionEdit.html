@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+   <title>答题吧</title>
+   <meta http-equiv="Content-Type" content="text/css" charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobole-web-app-status-bar-style" content="black"/>
+    <link href="../asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../asset/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../asset/css/DTBcss.css"> 
+    <link rel="stylesheet" href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!--Navbar header here-->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expended="false" aria=controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">答题吧</a>
+        </div>
+          <!--navgationBar 第一层-->
+          <div id="navbar" class="collapse navbar-collapse">
+            <div class="col-sm-4">
+              <ul class="nav navbar-nav navbar-left">
+                <li class="active">
+                  <a href="index.html">我的问卷</a>
+                </li>
+                <li>
+                  <a href="#">项目管理</a>
+                </li>
+                <li>
+                  <a href="#">我的账户</a>
+                </li>
+              </ul>      
+            </div>
+            <div class="">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="#">退出</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+     </div>
+  </nav>
+
+  <!--第二层导航栏-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="nav nav-pills nav-justified">
+           <li role="presentation">
+             <a href="#">问卷编辑</a>
+           </li>
+
+           <li role="presentation">
+             <a href="#">问卷设置</a>
+           </li>
+
+           <li role="presentation">
+             <a href="#">查看结果</a>
+           </li>
+        </ul>
+      </div>
+      <div class="navButton">
+        <button type="button" class="btn btn-info">预览问卷</button>
+        <button type="button" class="btn btn-info">开始回收</button>
+      </div>
+    </div>
+    
+  </nav>
+<!-- 中心部分-->
+<div class="container">
+	<!-- 中心部分左侧-->
+    <div class="col-sm-3 pull-left">
+        <!-- 选项卡组件（菜单项nav-tabs）-->
+        <ul id="myTab" class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#bulletin" role="tab" data-toggle="tab">题型工具</a></li>
+            <li><a href="#rule" role="tab" data-toggle="tab">问卷大纲</a></li>
+        </ul>
+        <!-- 选项卡面板 -->
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active" id="bulletin">
+                <!-- 题型工具菜单（列表组） -->
+                <div class="list-group question_type">
+                       <button class="list-group-item" id="radio"> 
+                       		<!-- 图标字体 -->
+                            <span class="glyphicon glyphicon-record nav_radio" aria-hidden="true"></span>
+                            <a href="#">单选题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-check nav_radio" aria-hidden="true"></span>
+                            <a href="#">多选题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-edit nav_radio" aria-hidden="true"></span>
+                            <a href="#">填空题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-tasks nav_radio" aria-hidden="true"></span>
+                            <a href="#">多项填空题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-star nav_radio" aria-hidden="true"></span>
+                            <a href="#">评分题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-th-list nav_radio" aria-hidden="true"></span>
+                            <a href="#">排序题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-level-up nav_radio" aria-hidden="true"></span>
+                            <a href="#">文件上传题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-th nav_radio" aria-hidden="true"></span>
+                            <a href="#">矩阵题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-picture nav_radio" aria-hidden="true"></span>
+                            <a href="#">图片题</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-info-sign nav_radio" aria-hidden="true"></span>
+                            <a href="#">描述说明</a>
+                       </button>
+                       <button class="list-group-item">
+                            <span class="glyphicon glyphicon-plus-sign nav_radio" aria-hidden="true"></span>
+                            <a href="#">插入分页</a>
+                       </button>
+                </div>
+            </div>
+            <!-- 选项卡面板（问卷大纲内容） -->
+            <div class="tab-pane" id="rule">问卷大纲</div>
+        </div>
+    </div>
+    <!-- 中心部分右侧-->
+    <div class="col-sm-9 pull-right">
+    	  <!-- 中心部分右侧(左上角)-->
+    	  <div class="tabbable" id="tabs-554379">
+				<ul class="nav nav-tabs">
+                <!--分页效果-->
+					<li class="active">
+						<a href="#panel-one" data-toggle="tab">第1页</a>
+					</li>
+					<li>
+						<a href="#panel-two" data-toggle="tab"><span class="glyphicon glyphicon-plus"></span></a>
+					</li>
+				</ul>
+				<div class="tab-content">
+                	<!--内容可编辑-->
+					<div class="tab-pane active tab_content" id="panel-one">
+                    	<!--标题可编辑-->
+                        <div class="text_title">
+							<input class="input-xxlarge col-sm-10 col-sm-offset-1 text-center" type="text" placeholder="问卷标题">
+                        </div>
+                        <!--说明可编辑区域-->
+                        <p>
+                        	<input class="input-block-level col-sm-10 col-sm-offset-1 text_wrap" type="text" placeholder="为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，期待您的参与！"> 
+                        </p>
+					</div>
+                    <!--隐藏单选按钮div内容样式-->
+                    <div id="radio_wrap">
+                    		<!--创建div区域-->
+                    </div>
+				</div>
+		  </div>
+    </div>
+ 
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="../asset/js/jquery-1.10.2.min.js"></script>
+<script src="../asset/js/bootstrap.min.js"></script>
+<script src="../asset/js/radio.js"></script>
+<script src="../asset/js/question_edit.js"></script>
+<script type="text/javascript">
+	//li的删除按钮功能
+	  function closebtn(obj){
+		  var row = obj.parentNode.parentNode;
+		  var tb = row.parentNode;
+			  tb.remove();
+	  };
+  
+	//文字编辑功能--模态框
+	function modalframe(){
+		var oModalfm=document.createElement('div');
+		oModalfm.innerHTML='<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'
+                    +'<div class="modal-dialog">'
+                        +'<div class="modal-content">'
+                           +' <div class="modal-header">'
+                                +'<button type="button" class="close" data-dismiss="modal" aria-hidden="true">'
+                                   +' &times;'
+                                +'</button>'
+                                +'<h4 class="modal-title" id="myModalLabel">'
+                                   +' 高级编辑'
+                                +'</h4>'
+                           +' </div>'
+                            +'<div class="modal-body">'
+                                +'<div class="content bgcolor-1">'
+                                    +'<div class="main">'
+                                       +' <div style="width:100%; margin: 0px auto;">'
+                                            +'<textarea id="editor1" name="editor" placeholder="">'
+                                            +'</textarea>'
+                                       +'</div>'
+                                    +'</div>'
+                                +'</div>'
+                            +'</div>'
+                            +'<div class="modal-footer">'
+                                +'<button type="button" class="btn btn-default" data-dismiss="modal">'
+									+'关闭'
+                                +'</button>'
+                                +'<button type="button" class="btn btn-primary">'
+                                   +'保存'
+                                +'</button>'
+                            +'</div>'
+                        +'</div>';
+			$('#radio_wrap').append(oModalfm);
+	};
+	
+	//引用提示效果
+	function tipsover(){
+		var timer=null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+		  $('.pop_left').show();
+		},800);
+		
+	};
+	function tipsout(){
+		var timer=null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+		  $('.pop_left').hide();
+		},300);
+		
+	};  
+	//引用1提示效果
+	function tipsoverone(){
+		var timer=null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+		  $('.pop_lefts').show();
+		},800);
+		
+	};
+	function tipsoutone(){
+		var timer=null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+		  $('.pop_lefts').hide();
+		},300);
+		
+	};
+	  
+  //引用2提示效果
+	function tipsovertwo(){
+		var timer=null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+		  $('.pop_leftr').show();
+		},800);
+		
+	};
+	function tipsouttwo(){
+		var timer=null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+		  $('.pop_leftr').hide();
+		},300);
+		
+	};  
+  //问题标题划过效果
+  function jqtitleover(){
+    var timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      $('.btn_hover').show();
+    },300);
+    
+  };
+  
+  function jqtitleout(){
+    var timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      $('.btn_hover').hide();
+    },300);
+  };
+  
+   //选项1划过效果
+  function jqtitleoverone(){
+    var timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      $('.btn_over').show();
+    },300);
+    
+  };
+  
+  function jqtitleoutone(){
+    var timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      $('.btn_over').hide();
+    },300);
+  };
+  
+  //选项2划过效果
+  function jqtitleovertwo(){
+    var timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      $('.btn_hovers').show();
+    },300);
+    
+  };
+  
+  function jqtitleouttwo(){
+    var timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      $('.btn_hovers').hide();
+    },300);
+  };
+  
+  //随机选项按钮点击效果
+  function randombtn(){
+    var oBtn =document.getElementById('sj_active');
+    if(oBtn.className=='btn-primarys'){
+      oBtn.className='btn-defaults';
+    }else{
+      oBtn.className='btn-primarys';
+    }
+  };
+  //该题必答按钮点击效果
+  function nsanswer(){
+    var oAnswer =document.getElementById('bd_active');
+    if(oAnswer.className=='btn-defaults'){
+      oAnswer.className='btn-primarys';
+    }else{
+      oAnswer.className='btn-defaults';
+    }
+  };
+  //高级展开效果
+  function advsetting(){
+      var oDL = document.getElementById('splite_div');
+      var oS = document.getElementById('caret');
+      if(oDL.style.display=='block'){
+        oDL.style.display='none';
+        oS.className='caret';
+      }else{
+        oDL.style.display='block';
+        oS.className='caretup';
+      }
+  };
+
+	//li的删除按钮功能
+	function closebtn(obj){
+		  var row = obj.parentNode.parentNode;
+          var tb = row.parentNode;
+          tb.remove();
+	};
+	
+	
+	
+	//问题标题划过效果
+	function jqtitleover(){
+		var timer = null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+			$('.btn_hover').show();
+		},300);
+		
+	};
+	function jqtitleout(){
+		var timer = null;
+		clearTimeout(timer);
+		timer = setTimeout(function(){
+			$('.btn_hover').hide();
+		},300);
+		
+	};
+	//随机选项点击效果
+	function randombtn(){
+		var oBtn =document.getElementById('sj_active');
+		if(oBtn.className=='btn-primarys'){
+			oBtn.className='btn-defaults';
+		}else{
+			oBtn.className='btn-primarys';
+		}
+	};
+	//该题必答点击效果
+	function nsanswer(){
+		var oAnswer =document.getElementById('bd_active');
+		if(oAnswer.className=='btn-defaults'){
+			oAnswer.className='btn-primarys';
+		}else{
+			oAnswer.className='btn-defaults';
+		}
+	};
+	//高级展开效果
+	function advsetting(){
+			var oDL = document.getElementById('splite_div');
+			var oS = document.getElementById('caret');
+			if(oDL.style.display=='block'){
+				oDL.style.display='none';
+				oS.className='caret';
+			}else{
+				oDL.style.display='block';
+				oS.className='caretup';
+			}
+	};
+
+	
+	//确定按钮的方法
+	function confirmbtn(){
+		var oTitle=document.getElementById('title_value');
+		var oChone=document.getElementById('change_one');
+		var oChtwo=document.getElementById('change_two');
+		var i=0;
+		i++;
+		//创建div
+		window.oCfdiv=document.createElement('div'+i);
+		oCfdiv.id='confmDiv';
+		oCfdiv.innerHTML='<div class="radio_wrap">'
+                                    +'<div class="row">'
+                                     +'<div class="text_question col-sm-2">'
+                                        +'<div class="question_operation" style="width:50%;">'
+                                           +'<button class="list-group-item  glyphicon glyphicon-arrow-up nav_radio" data-toggle="popover" data-placement="right"  data-content="上移本题" data-trigger="hover"></button>'
+                                           +'<button class="list-group-item glyphicon glyphicon-arrow-down nav_radio" data-toggle="popover" data-placement="right"  data-content="下移本题" data-trigger="hover"></button>'
+                                           +'<button class="list-group-item glyphicon glyphicon-file nav_radio" data-toggle="popover" data-placement="right"  data-content="复制题目" data-trigger="hover"></button>'
+                                           +'<button class="list-group-item glyphicon glyphicon-trash nav_radio" data-toggle="popover" data-placement="right"  data-content="删除题目" data-trigger="hover"></button>'
+                                           +'</div>'
+                                           +'</div>'
+                                        +'<div class="question_content">'
+                                         +'<div class="col-sm-8">'
+                                                +'<div class="input-group">'
+                                                  +'<span class="input-group-addon">Q'+i+'</span>'
+                                                  +'<aria-label type="text" class="form-control">'+oTitle.value+'</aria-label>'
+                                                +'</div>'
+                                          +'</div>'
+                                          +'<div class="col-sm-8 radio_in">'
+                                                +'<div class="input-group">'
+                                                      +'<span class="input-group-addon">'
+                                                        +'<input type="radio" aria-label="..."> '
+                                                      +'</span>'
+                                                      +'<aria-label type="text" class="form-control">'+oChone.value+'</aria-label>'
+                                                +'</div>'
+                                          +'</div>'
+                                          +'<div class="col-sm-8 radio_in">'
+                                                +'<div class="input-group">'
+                                                     +'<span class="input-group-addon">'
+                                                       +'<input type="radio" aria-label="...">' 
+                                                      +'</span>'
+                                                      +'<aria-label type="text" class="form-control">'+oChtwo.value+'</aria-label>'
+                                               +'</div>'
+                                          +'</div>'
+                                          +'</div>'
+                                  +'</div>'
+							+'</div>';
+			$('#radio_wrap').append(oCfdiv);
+			closediv();	
+      //悬浮按钮
+      $(".text_question").hover(
+		  function(){$(".question_operation").show();},
+		  function(){$(".question_operation").hide();}
+      );
+
+      $(function () 
+        	{ $("[data-toggle='popover']").popover();
+        });
+	  
+	};
+	//取消按钮的方法
+	function closediv(){
+		var oDiv=document.getElementById('myDiv');
+		//this.oDiv.innerHTML='';
+		$(this.oDiv).remove();
+	};
+	
+	var tempi = 0;
+
+	//新建按钮--复制功能;
+	function copybtn(){
+        debugger;
+		/*$('#radio_con').clone(true).after($('.clone'));*/
+		var oLi = $('#radio_con').clone(true);
+        oLi.attr("id", oLi.attr("id") + tempi++);
+        $('.clone').after(oLi);
+		   /* var i=0;
+			i++;
+			//创建div
+			window.oCopyfdiv=document.createElement('div'+i);
+			//oCopyfdiv.id='confmDiv+i';
+			oCopyfdiv.innerHTML='<div class="form-group" id="">'
+													+'<div class="col-sm-10 col-sm-offset-2">'
+														  +'<div class="col-sm-1">'
+																+'<input type="radio" class="form-control" id="">'
+														 +'</div>'
+														  +'<div class="col-sm-8">'
+																+'<input type="text" class="form-control" id="" placeholder="选项">'
+														  +'</div>'
+														  +'<div class="col-sm-1">'
+																+'<button type="button" id="btn_radio" class="close" aria-label="Close">'
+																+'<span aria-hidden="true">&times;</span>'
+																+'</button>'
+														  +'</div>'
+													+'</div>'
+											  +'</div>';
+			$('#radio_con').after(oCopyfdiv);
+*/
+	};
+</script>
+
+</body>
+</html>
