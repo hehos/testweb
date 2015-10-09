@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+var jc001 = {
+    ui : 'http://ui.homenew.9z.cn',
+    domain : '.homenew.9z.cn',
+    domain_pub : '.9z.cnn'
+};
+</script>
+<script src="http://ui.homenew.9z.cn/js/japi.js?v=61" type="text/javascript"></script>
+<script>jc001.load('papi');</script>
+
+
+<script>
+    jc001.papi.api('comm.user.getUserInfo').done(function(rs){
+        console.log(rs);
+    }).fail(function(rs){
+        console.log(rs);
+    })
+</script>
+
+<div>测试接口</div>
+
+</body>
+</html>
