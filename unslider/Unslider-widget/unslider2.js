@@ -7,11 +7,8 @@
 
 (function ($, f) {
     var Unslider = function () {
-        //  Object clone
-        var _ = this;
-
         //  Set some options
-        _.o = {
+        this.o = {
             speed: 500,     // animation speed, false for no transition (integer or boolean)
             delay: 3000,    // delay between slides, false for no autoplay (integer or boolean)  自动播放幻灯片的延迟时间。
             init: 0,        // init delay, false for no delay (integer or boolean)  开始自动播放slider的等待时间
@@ -48,9 +45,8 @@
             var ul = _.ul = el.find("." + _.o.CLASSNAME_ITEMS);
             var max = _.max = [0, 0];
             var li = _.li = el.find("." + _.o.CLASSNAME_ITEM);
-            var len = li.length;
+            var len = _.len = li.length;
 
-            debugger;
             //  Set the relative widths
             ul.width((len * 100) + '%');
             li.width((100 / len) + '%');
@@ -108,10 +104,10 @@
             }
 
             //  Dot pagination
-            o.dots && nav('dot');
+            o.dots && control('dot');
 
             //  Arrows support
-            o.arrows && nav('arrow');
+            o.arrows && control('arrow');
 
             //  Patch for fluid-width sliders. Screw those guys.
             o.fluid && $(window).resize(function () {
@@ -164,7 +160,9 @@
                 _.play();
             }
 
-            debugger;
+            //  Check if it's out of bounds
+            if (index >= _.len) index = 0;
+            if (index < 0) index = _.len - 1;
 
             var o = _.o,
                 el = _.el,
@@ -173,9 +171,7 @@
                 current = _.i,
                 target = li.eq(index);
 
-            //  Check if it's out of bounds
-            if (index >= li.length) index = 0;
-            if (index < 0) index = li.length - 1;
+
 
             $.isFunction(o.starting) && !callback && o.starting(el, li.eq(current));
 
@@ -227,7 +223,7 @@
         };
 
         //  Create dots and arrows
-        function nav(name) {
+        _.control = function(name) {
             if(name == _.o.CLASSNAME_DOT) {
                 var dots = _.el.find("." + _.o.CLASSNAME_DOTS);
                 var dot = _.el.find("." + _.o.CLASSNAME_DOT).eq(0).clone();
@@ -247,6 +243,28 @@
             });
         };
     };
+
+    Unslider.prototype.init = function (el, o) {
+
+    }
+    Unslider.prototype.to = function () {
+
+    }
+    Unslider.prototype.play = function () {
+
+    }
+    Unslider.prototype.stop = function () {
+
+    }
+    Unslider.prototype.next = function () {
+
+    }
+    Unslider.prototype.prev = function () {
+
+    }
+    Unslider.prototype.control = function () {
+
+    }
 
     //  Create a jQuery plugin
     $.fn.unslider = function (o) {

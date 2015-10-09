@@ -45,14 +45,24 @@
   background: #fff;
   opacity: 1;
 }
-.slider .arrows {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  color: #fff;
-}
 .slider .arrow {
-  display: inline;
-  padding-left: 10px;
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  width: 40px;
+  height: 80px;
+  line-height: 80px;
+  margin-top: -40px;
+  text-align: center;
   cursor: pointer;
+  font-size: 3em;
+  font-family: sans-serif;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.slider .arrow.prev {
+  left: 0;
+}
+.slider .arrow.next {
+  right: 0;
 }
