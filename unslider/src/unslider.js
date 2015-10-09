@@ -22,7 +22,7 @@
             arrows: f,      // display prev/next arrows (boolean)  是否显示左右切换箭头
             prev: '&larr;', // text or html inside prev button (string)
             next: '&rarr;', // same as for prev option
-            fluid: f,       // is it a percentage width? (boolean)  流动布局
+            fluid: true,       // is it a percentage width? (boolean)  流动布局
             starting: f,    // invoke before animation (function with argument)
             complete: f,    // invoke after animation (function with argument)
             items: '>ul',   // slides container selector
@@ -39,6 +39,21 @@
             _.ul = el.find(_.o.items);
             _.max = [0, 0];
             _.li = _.ul.find(_.o.item);
+
+            //  Cached vars
+            var o = _.o,
+                ul = _.ul,
+                li = _.li,
+                len = li.length;
+
+            //  Current indeed
+            _.i = 0;
+
+
+            //  Set the relative widths
+            ul.width((len * 100) + '%');
+            li.width((100 / len) + '%');
+
             // 计算容器的宽和高
             _.li.each(function (index) {
                 var me = $(this),
@@ -53,24 +68,10 @@
 
             console.log(_.max);
 
-            //  Cached vars
-            var o = _.o,
-                ul = _.ul,
-                li = _.li,
-                len = li.length;
-
-            //  Current indeed
-            _.i = 0;
-
             //  Set the main element
-            el.css({width: _.max[0], height: li.first().outerHeight(), overflow: 'hidden'});
-
-            //  Set the relative widths
-            ul.css({position: 'relative', left: 0, width: (len * 100) + '%'});
-            if (o.fluid) {
-                li.css({'float': 'left', width: (100 / len) + '%'});
-            } else {
-                li.css({'float': 'left', width: (_.max[0]) + 'px'});
+            el.css({ width: _.max[0], height: li.first().outerHeight() });
+            if (!o.fluid) {
+                li.width(_.max[0]);
             }
 
             //  Autoslide
@@ -91,6 +92,7 @@
             //  Keypresses
             if (o.keys) {
                 $(document).keydown(function (e) {
+                    console.log(88);
                     switch (e.which) {
                         case 37:
                             _.prev(); // Left
@@ -161,16 +163,17 @@
                 _.stop();
                 _.play();
             }
-            //  Check if it's out of bounds
-            if (index >= _.li.length) index = 0;
-            if (index < 0) index = li.length - 1;
 
             var o = _.o,
                 el = _.el,
                 ul = _.ul,
                 li = _.li,
                 current = _.i,
-                target = li.eq[index];
+                target = li.eq(index);
+
+            //  Check if it's out of bounds
+            if (index >= li.length) index = 0;
+            if (index < 0) index = li.length - 1;
 
             $.isFunction(o.starting) && !callback && o.starting(el, li.eq(current));
 
@@ -186,15 +189,15 @@
                 el.find('.dot').eq(index).addClass('active').siblings().removeClass('active');
 
                 el.animate(obj, speed, easing) &&
-                    ul.animate(
-                        $.extend({left: '-' + index + '00%'}, obj),
-                        speed,
-                        easing,
-                        function (data) {
-                            _.i = index;
+                ul.animate(
+                    $.extend({left: '-' + index + '00%'}, obj),
+                    speed,
+                    easing,
+                    function (data) {
+                        _.i = index;
 
-                            $.isFunction(o.complete) && !callback && o.complete(el, target);
-                        });
+                        $.isFunction(o.complete) && !callback && o.complete(el, target);
+                    });
             }
         };
 

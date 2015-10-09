@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Unslider &mdash; the super-tiny jQuery slider</title>
+
+		<link rel="stylesheet" href="style.css">
+
+		<meta name="viewport" content="width=device-width">
+
+		<script>try{Typekit.load();}catch(e){}</script>
+        <style>
+        </style>
+	</head>
+	<body>
+
+    <style>
+        .wrap {
+            overflow: hidden;
+        }
+        .wrap .left {
+            height: 100px;
+        }
+
+        .wrap .left {
+            float: left;
+            width: 50%;
+        }
+        .wrap .right {
+            float: right;
+            width: 50%;
+        }
+    </style>
+
+    <div class="wrap">
+        <div class="left">
+
+        </div>
+        <div class="right">
+            <!--<div class="banner">-->
+                <!--<ul>-->
+                    <!--<li style="background-image: url('img/sunset.jpg');">-->
+                        <!--<div class="inner">-->
+                            <!--<h1>The jQuery slider that just slides.</h1>-->
+                            <!--<p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>-->
+
+                            <!--<a class="btn" href="#download">Download</a>-->
+                        <!--</div>-->
+                    <!--</li>-->
+
+                    <!--<li style="background-image: url('img/wood.jpg');">-->
+                        <!--<div class="inner">-->
+                            <!--<h1>Fluid, flexible, fantastically minimal.</h1>-->
+                            <!--<p>Use any HTML in your slides, extend with CSS. You have full control.</p>-->
+
+                            <!--<a class="btn" href="#download">Download</a>-->
+                        <!--</div>-->
+                    <!--</li>-->
+
+                    <!--<li style="background-image: url('img/subway.jpg');">-->
+                        <!--<div class="inner">-->
+                            <!--<h1>Open-source.</h1>-->
+                            <!--<p>Everything to do with Unslider is hosted on GitHub.</p>-->
+
+                            <!--<a class="btn" href="//github.com/idiot/unslider">Contribute</a>-->
+                        <!--</div>-->
+                    <!--</li>-->
+
+                    <!--<li style="background-image: url('img/sunset.jpg');">-->
+                        <!--<div class="inner">-->
+                            <!--<h1>The jQuery slider that just slides.</h1>-->
+                            <!--<p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>-->
+
+                            <!--<a class="btn" href="#download">Download</a>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <div class="banner slider">
+                <ul class="items">
+                    <li>
+                        <a href="javascript:void(0);"><img src="slider1.jpg" alt=""/></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="slider2.jpg" alt=""/></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="slider3.jpg" alt=""/></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="slider4.jpg" alt=""/></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+		<script src="../src/jquery-latest.min.js"></script>
+
+		<script src="../src/jquery.event.move.js"></script>
+		<script src="../src/jquery.event.swipe.js"></script>
+
+		<script src="../src/unslider.js"></script>
+		<script>
+
+			$('.banner').unslider({
+                keys: true,
+                autoplay: false,
+				arrows: true,
+				fluid: true,
+				dots: true
+			});
+
+		</script>
+	</body>
+</html>

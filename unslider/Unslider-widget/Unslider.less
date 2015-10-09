@@ -1,0 +1,57 @@
+@import "../../../css/mixins.less";
+//@import "../media-config.less";
+
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .items {
+    .clearfix();
+    position: relative;
+    left: 0;
+  }
+  .items li {
+    float: left;
+  }
+
+  .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 20px;
+  }
+  .dot {
+    display: inline-block;
+    zoom: 1;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+    &.active {
+      background: #fff;
+      opacity: 1;
+    }
+  }
+  .arrows {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+  }
+  .arrow {
+    display: inline;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+}
