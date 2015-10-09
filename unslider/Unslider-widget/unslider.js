@@ -72,12 +72,12 @@
         }
 
         //  Autoslide
-        // autoplay、delay、delay具有父子逻辑关系
+        // autoplay、delay、pause 具有父子逻辑关系
         o.autoplay && setTimeout(function () {
             if (o.delay | 0) {
                 _.play();
 
-                if (o.delay) {
+                if (o.pause) {
                     el.on('mouseover mouseout', function (e) {
                         _.stop();
                         e.type === 'mouseout' && _.play();
@@ -116,8 +116,8 @@
             _.r = setTimeout(function () {
                 var styl = {height: li.eq(_.i).outerHeight()},
                     width = el.outerWidth();
-
                 ul.css(styl);
+                debugger;
                 styl['width'] = Math.min(Math.round((width / el.parent().width()) * 100), 100) + '%';
                 el.css(styl);
                 li.css({width: width + 'px'});
@@ -170,8 +170,6 @@
             li = _.li,
             current = _.i,
             target = li.eq(index);
-
-
 
         $.isFunction(o.starting) && !callback && o.starting(el, li.eq(current));
 
@@ -232,7 +230,6 @@
             var dots = _.el.find("." + _.o.CLASSNAME_DOTS);
             var dot = _.el.find("." + _.o.CLASSNAME_DOT).eq(0).clone();
             dots.empty();
-            console.log(dot == dot.clone());
             $.each(_.li, function (index) {
                 dots.append(dot.clone().addClass(index === _.i ? "active" : ""));
             });
