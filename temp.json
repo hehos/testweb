@@ -1,0 +1,11 @@
+{
+  "server":"0.0.0.0",
+  "local_port": 443,
+  "password": "hehui1990aiwoHAH",
+  "timeout":300,
+  "method":"chacha20-ietf-poly1305",
+  "mode":"tcp_and_udp",
+  "fast_open": false,
+  "plugin":"v2ray-plugin",
+  "plugin_opts":"server;tls;fast-open;host=ss.sulian.me;cert=/home/sulian/certs/ss.sulian.me.cer;key=/home/sulian/certs/ss.sulian.me.key;loglevel=none"
+}
